@@ -19,6 +19,9 @@ interface PropertyData {
   "Change from Last Month": string;
   "Previous 3 Months Change": number | null;
   "Trending < >": string;
+  "LAST MONTH": string | number | null;
+  "LAST QUARTER": string | number | null;
+  "LAST YEAR": string | number | null;
 }
 
 interface SFProps {
@@ -40,9 +43,9 @@ const sfColumns: {
   { key: 'new', label: 'NEW', accessor: (item) => item["New Listings"] },
   { key: 'changed', label: 'CHANGED', accessor: (item) => item["Price Adjustments"] },
   { key: 'dom', label: 'DOM', accessor: (item) => item["DOM"] },
-  { key: 'lastMonth', label: 'LAST MONTH', accessor: (item) => item["Change from Last Month"] },
-  { key: 'lastQuarter', label: 'LAST QUARTER', accessor: (item) => item["Previous 3 Months Change"] },
-  { key: 'lastYear', label: 'LAST YEAR', accessor: (item) => item["List to Close +/-"] },
+  { key: 'lastMonth', label: 'LAST MONTH', accessor: (item) => item["LAST MONTH"] },
+  { key: 'lastQuarter', label: 'LAST QUARTER', accessor: (item) => item["LAST QUARTER"] },
+  { key: 'lastYear', label: 'LAST YEAR', accessor: (item) => item["LAST YEAR"] },
 ]
 
 const formatCellValue = (value: string | number | null | undefined) => {

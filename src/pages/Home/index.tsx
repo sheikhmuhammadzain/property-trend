@@ -53,16 +53,19 @@ const Tables = () => {
             
             return {
               pricerange: pricerange,
-              "Pending/ Signed Contract": item["Pending/ Signed Contract"] || 0,
-              "Price Adjustments": item["Price Adjustments"] || 0,
-              "Sold and Closed": item["Sold and Closed"] || 0,
-              "New Listings": item["New Listings"] || 0,
-              "DOM": item["DOM"] || 0,
-              "List to Close +/-": item["List to Close +/-"] || 0,
-              "Total Actives": item["Total Actives"] || 0,
-              "Change from Last Month": item["Change from Last Month"] || "0%",
-              "Previous 3 Months Change": item["Previous 3 Months Change"] || 0,
-              "Trending < >": item["Trending < >"] || "→"
+              "Pending/ Signed Contract": item["Pending/ Signed Contract"] ?? 0,
+              "Price Adjustments": item["Price Adjustments"] ?? 0,
+              "Sold and Closed": item["Sold and Closed"] ?? 0,
+              "New Listings": item["New Listings"] ?? 0,
+              "DOM": item["DOM"] ?? 0,
+              "List to Close +/-": item["List to Close +/-"] ?? 0,
+              "Total Actives": item["Total Actives"] ?? 0,
+              "Change from Last Month": item["Change from Last Month"] ?? "0%",
+              "Previous 3 Months Change": item["Previous 3 Months Change"] ?? 0,
+              "Trending < >": item["Trending < >"] ?? "→",
+              "LAST MONTH": item["LAST MONTH"] ?? null,
+              "LAST QUARTER": item["LAST QUARTER"] ?? null,
+              "LAST YEAR": item["LAST YEAR"] ?? null,
             };
           });
 
@@ -96,17 +99,20 @@ const Tables = () => {
         if (response.data.condo && Array.isArray(response.data.condo)) {
           // Transform condo data to match expected component structure
           const transformedCondoData = response.data.condo.map((item: any) => ({
-            pricerange: item.index, // Use index as pricerange
-            "Pending/ Signed Contract": item["Pending/ Signed Contract"] || 0,
-            "Price Adjustments": 0, // Not available in current data structure
-            "Sold and Closed": 0, // Not available in current data structure
-            "New Listings": 0, // Not available in current data structure
-            "DOM": 0, // Not available in current data structure
-            "List to Close +/-": 0, // Not available in current data structure
-            "Total Actives": 0, // Not available in current data structure
-            "Change from Last Month": "0%", // Not available in current data structure
-            "Previous 3 Months Change": 0, // Not available in current data structure
-            "Trending < >": "→" // Default trend
+            pricerange: item.pricerange || item.index || 'Unknown',
+            "Pending/ Signed Contract": item["Pending/ Signed Contract"] ?? 0,
+            "Price Adjustments": item["Price Adjustments"] ?? 0,
+            "Sold and Closed": item["Sold and Closed"] ?? 0,
+            "New Listings": item["New Listings"] ?? 0,
+            "DOM": item["DOM"] ?? 0,
+            "List to Close +/-": item["List to Close +/-"] ?? 0,
+            "Total Actives": item["Total Actives"] ?? 0,
+            "Change from Last Month": item["Change from Last Month"] ?? "0%",
+            "Previous 3 Months Change": item["Previous 3 Months Change"] ?? 0,
+            "Trending < >": item["Trending < >"] ?? "→",
+            "LAST MONTH": item["LAST MONTH"] ?? null,
+            "LAST QUARTER": item["LAST QUARTER"] ?? null,
+            "LAST YEAR": item["LAST YEAR"] ?? null,
           }));
 
           // Sort Condo data by price range in ascending order
