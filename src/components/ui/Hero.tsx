@@ -29,9 +29,14 @@ const Hero = () => {
             </div>
 
             <div className="space-y-8">
-              <h1 className="text-3xl md:text-4xl lg:text-[40px] font-semibold tracking-tight leading-snug text-slate-900">
-                A precision lens on Houston's ultra-luxury real estate—translating complex market data into clear,
-                actionable intelligence.
+              <h1>
+                <Link
+                  to="/"
+                  className="block text-3xl md:text-4xl lg:text-[40px] font-semibold tracking-tight leading-snug text-slate-900"
+                >
+                  A precision lens on Houston's ultra-luxury real estatetranslating complex market data into clear,
+                  actionable intelligence.
+                </Link>
               </h1>
 
               <p className="text-base md:text-lg text-slate-600 italic">

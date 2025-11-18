@@ -350,7 +350,7 @@ const Home = () => {
                 Data Integrity Statement
               </p>
               <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-                The Refined Report aggregates verified Houston MLS data filtered for Single-Family and Condominium properties within the city’s established luxury neighborhoods. Figures auto-refresh monthly, with hourly snapshots in between. Discrepancies with HAR.com reflect this selective scope, price-band segmentation, and the precise timing of MLS extraction.
+                The Refined Report aggregates verified Houston MLS data filtered for Single-Family and Condominium properties only. Figures auto-refresh monthly. Discrepancies with HAR.com reflect property-type alignment, timing of extraction, and active-status definitions.
               </p>
             </div>
             <div className="mt-2 md:mt-0 md:text-right">

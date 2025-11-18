@@ -18,7 +18,7 @@ const Footer = () => {
             Data Integrity Statement
           </p>
           <p className="text-sm text-gray-700 leading-relaxed">
-            The Refined Report aggregates verified Houston MLS data filtered for Single-Family and Condominium properties only. Figures auto-refresh monthly, with hourly snapshots between refreshes. Discrepancies with HAR.com reflect property-type alignment, timing of extraction, and active-status definitions.
+            The Refined Report aggregates verified Houston MLS data filtered for Single-Family and Condominium properties only. Figures auto-refresh monthly. Discrepancies with HAR.com reflect property-type alignment, timing of extraction, and active-status definitions.
           </p>
         </div>
 

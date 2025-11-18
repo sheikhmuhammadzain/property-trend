@@ -67,11 +67,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-[#F7F6F3]/90 backdrop-blur-md border-b border-white/60 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <Link to="/" className="text-sm uppercase tracking-[0.4em] text-gray-700 font-semibold">
-          The Refined Report
-        </Link>
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-end">
         <div className="flex items-center justify-center md:justify-end gap-4">
           {menuItems.length > 0 && (
             <MenuBar

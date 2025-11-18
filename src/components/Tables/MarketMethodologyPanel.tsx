@@ -11,19 +11,19 @@ const MarketMethodologyPanel = () => {
               Market Summary Methodology
             </span>
             <span className="text-sm text-gray-800 font-medium">
-              Data reflects monthly activity for Single-Family Homes and Condominiums priced above $1M.
+              Data reflects monthly market activity for Single-Family Homes and Condominiums priced above $1M.
             </span>
           </AccordionTrigger>
           <AccordionContent className="px-6 pb-5 text-sm text-gray-700 leading-relaxed">
             <ul className="list-disc pl-5 space-y-2">
-              <li><strong>"New Listings"</strong> = properties that came to market during the current month.</li>
-              <li><strong>"Pending / Signed Contract"</strong> = homes that went under contract this month, signaling real-time demand.</li>
-              <li><strong>"Sold / Closed"</strong> = transactions that completed this month.</li>
-              <li><strong>"DOM"</strong> = median days on market for closed sales only to avoid skew from unsold actives.</li>
-              <li><strong>"Last Month / Quarter / Year"</strong> = comparative lookbacks that benchmark momentum month-over-month, across the trailing quarter, and versus the same period last year.</li>
+              <li><strong>"New Listings"</strong> = properties that came to market this month.</li>
+              <li><strong>"Pending"</strong> = properties under contract during the selected month.</li>
+              <li><strong>"Sold"</strong> = closed transactions this month.</li>
+              <li><strong>"DOM"</strong> = median days on market for closed sales only.</li>
+              <li><strong>"Last Month / Quarter / Year"</strong> = comparative lookback metrics.</li>
             </ul>
             <p className="mt-4 text-sm">
-              Data is sourced directly from Houston MLS feeds but filtered for the city's established luxury neighborhoods, focused on single-family homes and condominiums above $1M. Differences from HAR.com are intentional—our narrower scope and hourly refresh cadence prioritize the ultra-luxury story over the broader market.
+              Data sourced from Houston MLS; differences from HAR.com reflect narrower property filters, price banding, and snapshot timing.
             </p>
             <p className="mt-4 text-xs italic text-gray-500">
               For a full explanation of how The Refined Report compiles and validates its data,{" "}
@@ -34,7 +34,7 @@ const MarketMethodologyPanel = () => {
                 rel="noopener noreferrer"
                 className="underline underline-offset-2 hover:text-gray-700 transition-colors"
               >
-                download the full methodology document
+                download the full methodology PDF
               </a>
               .
             </p>
