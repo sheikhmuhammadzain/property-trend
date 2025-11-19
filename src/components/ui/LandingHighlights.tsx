@@ -8,7 +8,6 @@ const insightCards = [
     metric: "+18.4%",
     delta: "vs. trailing 30 days",
     description: "Pent-up demand in $1M–$2M bands is translating into faster contract cadence.",
-    accent: "bg-[#1A1B1F] text-white",
   },
   {
     eyebrow: "Inventory pressure",
@@ -16,7 +15,6 @@ const insightCards = [
     metric: "3.2 mos",
     delta: "balanced market",
     description: "Sub–4 months of inventory keeps sellers in control inside core ZIPs.",
-    accent: "bg-white text-[#1A1B1F]",
   },
   {
     eyebrow: "Pricing discipline",
@@ -24,7 +22,6 @@ const insightCards = [
     metric: "-1.8%",
     delta: "tighter spreads",
     description: "Price reductions are clustering in the $3M+ bracket while entry luxury stays firm.",
-    accent: "bg-[#EFEAE4] text-[#1A1B1F]",
   },
 ];
 
@@ -53,15 +50,19 @@ const valueProps = [
 
 const LandingHighlights = () => {
   return (
-    <section className="bg-[#F8F7F5] border-y border-[#E3DED7]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
-        <div className="flex flex-col lg:flex-row gap-10 items-start">
-          <div className="flex-1 space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-[#6C6861]">This week’s pulse</p>
-            <h2 className="font-area-extended text-3xl md:text-4xl text-[#1F1F1E] leading-tight">
+    <section className="bg-[#F1EFED] border-b border-[#D6D1CA]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 space-y-20">
+
+        {/* Header Section */}
+        <div className="flex flex-col lg:flex-row gap-12 items-start justify-between">
+          <div className="flex-1 space-y-6 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8B8379]">
+              This week’s pulse
+            </p>
+            <h2 className="text-3xl md:text-4xl font-medium text-[#1F1F1E] leading-tight tracking-tight">
               Market intelligence designed for advisors, developers, and data-forward buyers.
             </h2>
-            <p className="text-base md:text-lg text-[#474641] max-w-2xl">
+            <p className="text-lg text-[#4B4944] leading-relaxed">
               Quickly spot momentum, stress-test pricing strategies, and brief stakeholders with conviction. We surface the
               same context analysts compile manually—without the drag.
             </p>
@@ -70,49 +71,68 @@ const LandingHighlights = () => {
           <div className="flex flex-wrap gap-4">
             <Link
               to="/charts"
-              className="inline-flex items-center gap-2 rounded-full bg-[#1A1B1F] text-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] shadow-lg shadow-black/10 hover:-translate-y-0.5 transition"
+              className="inline-flex items-center gap-2 rounded-none bg-[#1F1F1E] text-white px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-all hover:bg-[#3A3B40]"
             >
               Launch dashboard
-              <Sparkles className="h-4 w-4" />
+              <Sparkles className="h-3 w-3" />
             </Link>
             <Link
               to="/users"
-              className="inline-flex items-center gap-2 rounded-full border border-[#C0B7AE] px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#4B4944] hover:border-[#8B8379]"
+              className="inline-flex items-center gap-2 rounded-none border border-[#D6D1CA] px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#4B4944] hover:border-[#8B8379] hover:text-[#1F1F1E] transition-all"
             >
               Request access
             </Link>
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        {/* Insight Cards */}
+        <div className="grid gap-8 md:grid-cols-3">
           {insightCards.map((card) => (
-            <article key={card.eyebrow} className={`${card.accent} rounded-3xl p-6 shadow-[0_25px_60px_rgba(15,14,12,0.08)]`}>
-              <p className="text-[10px] uppercase tracking-[0.45em] opacity-70">{card.eyebrow}</p>
-              <h3 className="mt-4 text-xl font-semibold leading-snug">{card.title}</h3>
-              <div className="mt-6 flex items-baseline gap-3">
-                <span className="text-4xl font-bold font-area-extended">{card.metric}</span>
-                <span className="text-xs uppercase tracking-[0.4em] opacity-70">{card.delta}</span>
+            <article key={card.eyebrow} className="group relative border-t border-[#D6D1CA] pt-8 transition-all hover:border-[#8B8379]">
+              <div className="space-y-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#8B8379] font-medium">
+                  {card.eyebrow}
+                </p>
+                <h3 className="text-xl font-semibold text-[#1F1F1E] leading-snug">
+                  {card.title}
+                </h3>
+                <div className="flex items-baseline gap-3 pt-2">
+                  <span className="text-4xl font-bold text-[#1F1F1E] tracking-tight">
+                    {card.metric}
+                  </span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#8B8379]">
+                    {card.delta}
+                  </span>
+                </div>
+                <p className="text-sm text-[#4B4944] leading-relaxed pt-2">
+                  {card.description}
+                </p>
               </div>
-              <p className="mt-4 text-sm/relaxed opacity-90">{card.description}</p>
             </article>
           ))}
         </div>
 
-        <div className="rounded-[32px] border border-[#E3DED7] bg-white/70 p-8 shadow-[0_18px_45px_rgba(25,25,23,0.08)]">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {/* Value Props */}
+        <div className="pt-12 border-t border-[#D6D1CA]">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
             {valueProps.map((prop) => (
-              <div key={prop.title} className="flex gap-4">
-                <div className="h-12 w-12 rounded-2xl bg-[#F1ECE5] text-[#1F1F1E] flex items-center justify-center">
+              <div key={prop.title} className="flex flex-col gap-4">
+                <div className="h-10 w-10 rounded-full bg-[#E6E2DD] text-[#1F1F1E] flex items-center justify-center">
                   <prop.icon className="h-5 w-5" />
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-[#1F1F1E]">{prop.title}</p>
-                  <p className="text-sm text-[#5C5B56]">{prop.description}</p>
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-[#1F1F1E] uppercase tracking-wide">
+                    {prop.title}
+                  </p>
+                  <p className="text-sm text-[#4B4944] leading-relaxed">
+                    {prop.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
